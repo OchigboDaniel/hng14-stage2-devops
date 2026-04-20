@@ -9,9 +9,7 @@ API_PORT = os.getenv("API_PORT")
 app = FastAPI()
 
 
-r = redis.Redis(
-    host=REDIS_HOST, 
-    port=int(API_PORT))
+r = redis.Redis(host=REDIS_HOST, port=int(API_PORT))
 
 
 @app.post("/jobs")
