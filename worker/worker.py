@@ -1,8 +1,15 @@
 import redis
 import time
+import os
 
 
-r = redis.Redis(host="redis", port=6379)
+redis_host = os.getenv("REDIS_HOST")
+redis_port = os.getenv("REDIS_PORT")
+
+
+r = redis.Redis(
+    host=redis_host, 
+    port=int(redis_port))
 
 
 def process_job(job_id):
