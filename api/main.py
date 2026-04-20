@@ -3,7 +3,7 @@ import redis
 import uuid
 import os
 
-redis_host = os.getenv("REDIS_HOST")
+REDIS_HOST = os.getenv("REDIS_HOST")
 API_PORT = os.getenv("API_PORT")
 
 app = FastAPI()
