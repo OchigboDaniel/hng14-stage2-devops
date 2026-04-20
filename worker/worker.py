@@ -1,7 +1,5 @@
 import redis
 import time
-import os
-import signal
 
 r = redis.Redis(host="redis", port=6379)
 
@@ -9,6 +7,7 @@ def process_job(job_id):
     print(f"Processing job {job_id}")
     time.sleep(2)  # simulate work
     r.hset(f"job:{job_id}", "status", "completed")
+    
     print(f"Done: {job_id}")
 
 
